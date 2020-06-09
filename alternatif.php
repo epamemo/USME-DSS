@@ -3,9 +3,17 @@ include 'header.php';
 ?>
 
 <div class="container-fluid">
-    <h1>Data Alternatif</h1>
+    <div class="form">
+        <form action="fungsi_tambah.php" method="post">
+            <div class="form-group">
+                <label for="namaIkan">Nama Ikan</label>
+                <input type="text" name="contoh: Bawal" id="namaIkan" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-info">Tambah Ikan</button>
+        </form>
+    </div>
     <br>
-    <a href="tambah.php" class="btn btn-info">Tambah Alternatif</a>
+    <h1>Data Alternatif</h1>
     <table class="table table-striped table-hover">
         <tr>
             <th>No</th>
