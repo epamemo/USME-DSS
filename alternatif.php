@@ -4,12 +4,14 @@ include 'header.php';
 
 <div class="container-fluid">
     <div class="form">
-        <form action="fungsi_tambah.php" method="post">
+        <form action="FUNC/fungsi_tambah.php" method="post">
             <div class="form-group">
                 <label for="namaIkan">Nama Ikan</label>
-                <input type="text" name="contoh: Bawal" id="namaIkan" class="form-control">
+                <input type="text" name="nama" placeholder="contoh: Bawal" id="namaIkan" class="form-control">
             </div>
-            <button type="submit" class="btn btn-info">Tambah Ikan</button>
+            <button type="submit" class="btn btn-info">
+                Tambah Ikan
+            </button>
         </form>
     </div>
     <br>
