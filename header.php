@@ -30,13 +30,16 @@
                 </a>
             </div>
 
-            <ul class="list-unstyled components">
+            <ul class="list-unstyled components with-icon">
                 <h3>USME SPK</h3>
                 <li class="active">
-                    <a href="#">Home</a>
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span class="with-icon">Home</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">Alternatif</a>
+                    <a href="alternatif.php">Alternatif</a>
                 </li>
                 <li>
                     <a href="#">Kriteria</a>
