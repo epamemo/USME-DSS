@@ -37,19 +37,20 @@ include 'header.php';
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form role="form" action="FUNC/fungsi_edit.php" method="POST">
+                        <form role="form" action="alternatif.php" method="POST">
                             <?php
                             $id = $d['id'];
                             $query_edit = mysqli_query($koneksi, "SELECT * FROM alternatif WHERE id='$id'");
                             while ($row = mysqli_fetch_array($query_edit)) {
                             ?>
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="table" value="<?php echo "alternatif" ?>">
                                 <div class="form-group">
                                     <label>Nama</label>
                                     <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-success">Edit</button>
+                                    <button type="submit" name="edit" class="btn btn-success">Edit</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
                                 </div>
                             <?php
@@ -71,16 +72,17 @@ include 'header.php';
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <form role="form" action="FUNC/fungsi_delete.php" method="POST">
+                        <form role="form" action="alternatif.php" method="POST">
                             <?php
                             $id = $d['id'];
                             $query_edit = mysqli_query($koneksi, "SELECT * FROM alternatif WHERE id='$id'");
                             while ($row = mysqli_fetch_array($query_edit)) {
                             ?>
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="table" value="alternatif">
                                 <p class="">Anda yakin ingin menghapus <?php echo $row['nama']; ?>?</p>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                    <button type="submit" name="delete" class="btn btn-danger">Hapus</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
                                 </div>
                             <?php
@@ -101,18 +103,19 @@ include 'header.php';
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Tambah Data Alternatif</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form role="form" action="FUNC/fungsi_tambah.php" method="POST">
+                <form role="form" action="alternatif.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    <input type="hidden" name="table" value="alternatif">
                     <div class="form-group">
                         <label>Nama Ikan</label>
                         <input type="text" name="nama" class="form-control">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Tambah Data</button>
+                        <button type="submit" name="add" class="btn btn-success">Tambah Data</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </form>

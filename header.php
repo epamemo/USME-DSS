@@ -1,3 +1,27 @@
+<?php
+include 'config.php';
+include 'FUNC/fungsi.php';
+
+if (isset($_POST['delete'])) {
+    $id = $_POST['id'];
+    $table = $_POST['table'];
+    delete($id, $table);
+}
+if (isset($_POST['edit'])) {
+    $id = $_POST['id'];
+    $nama = $_POST['nama'];
+    $table = $_POST['table'];
+    edit($id, $nama, $table);
+}
+if (isset($_POST['add'])) {
+    $nama = $_POST['nama'];
+    $table = $_POST['table'];
+    tambahAlternatif($nama, $table);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -18,9 +42,6 @@
 </head>
 
 <body>
-    <?php
-    include 'config.php';
-    ?>
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -33,7 +54,7 @@
             <ul class="list-unstyled components with-icon">
                 <h3>USME SPK</h3>
                 <li class="active">
-                    <a href="#" class="nav-link">
+                    <a href="index.php" class="nav-link">
                         <i class="fas fa-home"></i>
                         <span class="with-icon">Home</span>
                     </a>
@@ -42,13 +63,15 @@
                     <a href="alternatif.php">Alternatif</a>
                 </li>
                 <li>
-                    <a href="#">Kriteria</a>
+                    <a href="kriteria.php">Kriteria</a>
                 </li>
                 <li>
                     <a href="#">Hasil</a>
                 </li>
             </ul>
-
+            <div class="footer">
+                <p>Made by Epafraditus Memoriano (USME)</p>
+            </div>
         </nav>
 
         <!-- Page Content  -->
