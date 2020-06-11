@@ -69,9 +69,10 @@ if (isset($_POST['add'])) {
                     <a href="#">Hasil</a>
                 </li>
             </ul>
+            <!--
             <div class="footer">
                 <p>Made by Epafraditus Memoriano (USME)</p>
-            </div>
+            </div>-->
         </nav>
 
         <!-- Page Content  -->
