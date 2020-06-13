@@ -26,7 +26,13 @@ include 'header.php';
     while ($d = mysqli_fetch_array($query)) { ?>
         <tr>
             <td><?php echo "C" . $no++; ?></td>
-            <td><?php echo $d['nama']; ?></td>
+            <td><?php echo $d['1']; ?></td>
+            <td><?php echo $d['2']; ?></td>
+            <td><?php echo $d['3']; ?></td>
+            <td><?php echo $d['4']; ?></td>
+            <td><?php echo $d['5']; ?></td>
+            <td><?php echo $d['atribut']; ?></td>
+            <td><?php echo $d['bobot'] . "%"; ?></td>
             <td>
                 <a href="#" type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal<?php echo $d['id']; ?>">Edit</a>
                 <a href="#" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myDelete<?php echo $d['id']; ?>">Hapus</a>
@@ -45,7 +51,7 @@ include 'header.php';
                         <form role="form" action="nilaikriteria.php" method="POST">
                             <?php
                             $id = $d['id'];
-                            $query_edit = mysqli_query($koneksi, "SELECT * FROM nilai_kriteria WHERE id='$id'");
+                            $query_edit = mysqli_query($koneksi, "SELECT * FROM nilai_kriteria WHERE id_kriteria='$id'");
                             while ($row = mysqli_fetch_array($query_edit)) {
                             ?>
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">

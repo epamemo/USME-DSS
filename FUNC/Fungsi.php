@@ -1,6 +1,27 @@
 <?php
 include 'config.php';
 
+function tambahAcuan($table, $id_kriteria, $nilai1, $nilai2, $nilai3, $nilai4, $nilai5, $bobot, $atribut)
+{
+    include 'config.php';
+    // menangkap data yang di kirim dari form
+    $table = $_POST['table'];
+    $id_kriteria = $_POST['id_kriteria'];
+    $nilai1 = $_POST['nilai1'];
+    $nilai2 = $_POST['nilai2'];
+    $nilai3 = $_POST['nilai3'];
+    $nilai4 = $_POST['nilai4'];
+    $nilai5 = $_POST['nilai5'];
+    $atribut = $_POST['atribut'];
+    $bobot = $_POST['bobot'];
+
+    // menginput data ke database
+    mysqli_query($koneksi, "INSERT INTO $table VALUES('$id_kriteria','$nilai1','$nilai2','$nilai3','$nilai4','$nilai5','$atribut','$bobot')");
+
+    // mengalihkan halaman kembali ke index.php
+    header("location:" . $table . ".php");
+}
+
 function tambahAlternatif($nama, $table)
 {
     include 'config.php';

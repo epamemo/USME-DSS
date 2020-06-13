@@ -18,6 +18,18 @@ if (isset($_POST['add'])) {
     $table = $_POST['table'];
     tambahAlternatif($nama, $table);
 }
+if (isset($_POST['addAcuan'])) {
+    $table = $_POST['table'];
+    $id_kriteria = $_POST['id_kriteria'];
+    $nilai1 = $_POST['nilai1'];
+    $nilai2 = $_POST['nilai2'];
+    $nilai3 = $_POST['nilai3'];
+    $nilai4 = $_POST['nilai4'];
+    $nilai5 = $_POST['nilai5'];
+    $atribut = $_POST['atribut'];
+    $bobot = $_POST['bobot'];
+    tambahAcuan($table, $id_kriteria, $nilai1, $nilai2, $nilai3, $nilai4, $nilai5, $bobot, $atribut);
+}
 
 ?>
 
@@ -64,6 +76,9 @@ if (isset($_POST['add'])) {
                 </li>
                 <li>
                     <a href="kriteria.php">Kriteria</a>
+                </li>
+                <li>
+                    <a href="nilai_kriteria.php">Nilai Kriteria</a>
                 </li>
                 <li>
                     <a href="#">Hasil</a>
