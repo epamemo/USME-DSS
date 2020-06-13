@@ -156,7 +156,7 @@ include 'header.php';
                         <input type="text" name="bobot" class="form-control">
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" name="add" class="btn btn-success">Tambah Data</button>
+                        <button type="submit" name="addAcuan" class="btn btn-success">Tambah Data</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </form>
