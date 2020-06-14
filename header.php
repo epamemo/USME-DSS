@@ -72,10 +72,10 @@ if (isset($_POST['addAcuan'])) {
                     </a>
                 </li>
                 <li>
-                    <a href="alternatif.php">Alternatif</a>
+                    <a href="kriteria.php">Kriteria</a>
                 </li>
                 <li>
-                    <a href="kriteria.php">Kriteria</a>
+                    <a href="alternatif.php">Alternatif</a>
                 </li>
                 <li>
                     <a href="nilai_kriteria.php">Nilai Kriteria</a>
