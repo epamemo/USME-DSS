@@ -8,7 +8,7 @@ include 'header.php';
 <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">
     Tambah Kriteria
 </button>
-<table class=" table table-striped table-hover">
+<table class="table-responsive table-striped table-hover">
     <tr>
         <th>Kode</th>
         <th>1</th>
@@ -50,11 +50,11 @@ include 'header.php';
                     <div class="modal-body">
                         <form role="form" action="nilaikriteria.php" method="POST">
                             <?php
-                            $id = $d['id'];
+                            $id = $d['id_kriteria'];
                             $query_edit = mysqli_query($koneksi, "SELECT * FROM nilai_kriteria WHERE id_kriteria='$id'");
                             while ($row = mysqli_fetch_array($query_edit)) {
                             ?>
-                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="id_kriteria" value="<?php echo $row['id']; ?>">
                                 <input type="hidden" name="table" value="<?php echo "kriteria" ?>">
                                 <div class="form-group">
                                     <label>Nama</label>
