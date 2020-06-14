@@ -68,6 +68,11 @@ a:focus {
 }
 
 #sidebar {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
     min-width: 250px;
     max-width: 250px;
     background: rgb(0, 0, 0);
@@ -158,9 +163,16 @@ a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 
-#content {
+#content.active {
     width: 100%;
-    padding: 20px;
+}
+
+#content {
+    width: calc(100% - 250px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 40px;
     min-height: 100vh;
     transition: all 0.3s;
 }
@@ -170,6 +182,10 @@ a.article:hover {
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
+    #content {
+        width: 100%;
+    }
+
     #sidebar {
         margin-left: -250px;
     }
