@@ -13,6 +13,15 @@ if (isset($_POST['edit'])) {
     $table = $_POST['table'];
     edit($id, $nama, $table);
 }
+if (isset($_POST['editNilaiAlternatif'])) {
+    $id = $_POST['id'];
+    $table = $_POST['table'];
+    $nama = $_POST['nama'];
+    $nilaiLamaPanen = $_POST['nilaiLamaPanen'];
+    $nilaiHBibit = $_POST['nilaiHBibit'];
+    $nilaiHPanen = $_POST['nilaiHPanen'];
+    editNilaiAlternatif($id, $table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen);
+}
 if (isset($_POST['add'])) {
     $nama = $_POST['nama'];
     $table = $_POST['table'];
@@ -28,19 +37,15 @@ if (isset($_POST['addAcuan'])) {
     $nilai5 = $_POST['nilai5'];
     $atribut = $_POST['atribut'];
     $bobot = $_POST['bobot'];
-    tambahAcuan($table, $id_kriteria, $nilai1, $nilai2, $nilai3, $nilai4, $nilai5, $bobot, $atribut);
+    tambahAcuan($table, $id_kriteria, $nilaiLamaPanen, $nilaiHBibit, $nilai3, $nilai4, $nilai5, $bobot, $atribut);
 }
 if (isset($_POST['addNilaiAlternatif'])) {
     $table = $_POST['table'];
-    $id_kriteria = $_POST['id_kriteria'];
-    $nilai1 = $_POST['nilai1'];
-    $nilai2 = $_POST['nilai2'];
-    $nilai3 = $_POST['nilai3'];
-    $nilai4 = $_POST['nilai4'];
-    $nilai5 = $_POST['nilai5'];
-    $atribut = $_POST['atribut'];
-    $bobot = $_POST['bobot'];
-    tambahNilaiAlternatif($table, $id_kriteria, $nilai1, $nilai2, $nilai3, $nilai4, $nilai5, $bobot, $atribut);
+    $nama = $_POST['nama'];
+    $nilaiLamaPanen = $_POST['nilaiLamaPanen'];
+    $nilaiHBibit = $_POST['nilaiHBibit'];
+    $nilaiHPanen = $_POST['nilaiHPanen'];
+    tambahNilaiAlternatif($table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen);
 }
 
 ?>
