@@ -47,6 +47,14 @@ if (isset($_POST['addNilaiAlternatif'])) {
     $nilaiHPanen = $_POST['nilaiHPanen'];
     tambahNilaiAlternatif($table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen);
 }
+if (isset($_POST['addNilaiNorm'])) {
+    $table = $_POST['table'];
+    $nama = $_POST['nama'];
+    $nilaiLamaPanen = $_POST['nilaiLamaPanen'];
+    $nilaiHBibit = $_POST['nilaiHBibit'];
+    $nilaiHPanen = $_POST['nilaiHPanen'];
+    tambahNilaiAlternatif($table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen);
+}
 
 ?>
 
