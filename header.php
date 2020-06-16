@@ -53,7 +53,7 @@ if (isset($_POST['addNilaiNorm'])) {
     $nilaiLamaPanen = $_POST['nilaiLamaPanen'];
     $nilaiHBibit = $_POST['nilaiHBibit'];
     $nilaiHPanen = $_POST['nilaiHPanen'];
-    tambahNilaiAlternatif($table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen);
+    tambahNilaiNorm($table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen);
 }
 
 ?>
