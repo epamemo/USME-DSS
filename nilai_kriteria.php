@@ -232,8 +232,8 @@ include 'header.php';
     </table>
     <br>
     <h1>Input Data Normalisasi</h1>
-    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#myModalAddNilai">
-        Tambah Nilai
+    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#myModalAddNorm">
+        Tambah Nilai Normalisasi
     </button>
     <br>
     <table class=" table table-striped table-hover">
@@ -256,8 +256,8 @@ include 'header.php';
                 <td><?php echo $d['hargabibit']; ?></td>
                 <td><?php echo  $d['hargapanen']; ?></td>
                 <td>
-                    <a href="#" type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalInput<?php echo $d['id']; ?>">Edit</a>
-                    <a href="#" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myDeleteInput<?php echo $d['id']; ?>">Hapus</a>
+                    <a href="#" type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalNorm<?php echo $d['id']; ?>">Edit</a>
+                    <a href="#" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myDeleteNorm<?php echo $d['id']; ?>">Hapus</a>
                 </td>
             </tr>
             <!-- Modal Edit -->
@@ -352,6 +352,52 @@ include 'header.php';
         ?>
     </table>
 </div>
+<!-- Modal Add Nilai Norm -->
+<div class="modal fade" id="myModalAddNorm" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Nilai Data</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form role="form" action="nilai_kriteria.php" method="POST">
+                    <div class="form-group">
+                        <select class="form-control" name="nama" id="nama">
+                            <option disabled selected> Pilih Data </option>
+                            <?php
+                            $query_add = mysqli_query($koneksi, "SELECT * FROM alternatif");
+                            while ($d = mysqli_fetch_array($query_add)) {
+                            ?>
+                                <option value="<?= $d['nama'] ?>"><?= $d['nama'] ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <input type="hidden" name="table" value="nilai_normalisasi">
+                    <div class="form-group">
+                        <label>Lama Panen</label>
+                        <input type="number" name="nilaiLamaPanen" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Harga Bibit</label>
+                        <input type="number" name="nilaiHBibit" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Harga Panen</label>
+                        <input type="number" name="nilaiHPanen" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="addNilaiNorm" class="btn btn-success">Tambah Data</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal Add Nilai -->
 <div class="modal fade" id="myModalAddNilai" role="dialog">
     <div class="modal-dialog">
@@ -379,15 +425,15 @@ include 'header.php';
                     <input type="hidden" name="table" value="nilai_alternatif">
                     <div class="form-group">
                         <label>Lama Panen</label>
-                        <input type="text" name="nilaiLamaPanen" class="form-control">
+                        <input type="number" name="nilaiLamaPanen" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Harga Bibit</label>
-                        <input type="text" name="nilaiHBibit" class="form-control">
+                        <input type="number" name="nilaiHBibit" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Harga Panen</label>
-                        <input type="text" name="nilaiHPanen" class="form-control">
+                        <input type="number" name="nilaiHPanen" class="form-control">
                     </div>
                     <div class="modal-footer">
                         <button type="submit" name="addNilaiAlternatif" class="btn btn-success">Tambah Data</button>
