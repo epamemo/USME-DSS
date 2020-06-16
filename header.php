@@ -106,7 +106,7 @@ if (isset($_POST['addNilaiNorm'])) {
                     <a href="nilai_kriteria.php">Nilai Kriteria</a>
                 </li>
                 <li>
-                    <a href="#">Hasil</a>
+                    <a href="hasil.php">Hasil</a>
                 </li>
             </ul>
             <!--
