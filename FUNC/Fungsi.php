@@ -1,6 +1,22 @@
 <?php
 include 'config.php';
 
+function tambahNilaiNorm($table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen)
+{
+    include 'config.php';
+    // menangkap data yang di kirim dari form
+    $table = $_POST['table'];
+    $nama = $_POST['nama'];
+    $nilaiLamaPanen = $_POST['nilaiLamaPanen'];
+    $nilaiHBibit = $_POST['nilaiHBibit'];
+    $nilaiHPanen = $_POST['nilaiHPanen'];
+
+    // menginput data ke database
+    mysqli_query($koneksi, "INSERT INTO $table VALUES('','$nama','$nilaiLamaPanen','$nilaiHBibit','$nilaiHPanen')");
+
+    // mengalihkan halaman kembali ke index.php
+    header("location:nilai_kriteria.php");
+}
 function tambahNilaiAlternatif($table, $nama, $nilaiLamaPanen, $nilaiHBibit, $nilaiHPanen)
 {
     include 'config.php';
