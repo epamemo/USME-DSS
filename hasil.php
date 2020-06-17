@@ -60,12 +60,6 @@ include 'header.php';
             </tr>
         <?php } ?>
     </table>
-    <?php
-    $array = array("a" => 1, "b" => 2, "c" => 4, "d" => 5);
-    $maxValue = max($array);
-    $maxIndex = array_search(max($array), $array);
-    var_dump($maxValue, $maxIndex);
-    ?>
     <h1>Peringkat Terbaik</h1>
     <table class="table table-striped table-hover">
         <tr>
