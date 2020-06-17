@@ -40,9 +40,23 @@ include 'header.php';
         for ($i = 0; $i < 3; $i++) { ?>
             <tr>
                 <td><?php echo $nama[$i]; ?></td>
-                <td><?php echo $min / $lamapanen[$i]; ?></td>
-                <td><?php echo $minhb / $hargabibit[$i]; ?></td>
-                <td><?php echo $hargapanen[$i] / $maxhp; ?></td>
+                <td><?php echo $nilailp[] = $min / $lamapanen[$i]; ?></td>
+                <td><?php echo $nilaihb[] = $minhb / $hargabibit[$i]; ?></td>
+                <td><?php echo $nilaihp[] = $hargapanen[$i] / $maxhp; ?></td>
+            </tr>
+        <?php } ?>
+    </table>
+
+    <h1>Peringkat Keputusan</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Data Alternatif</th>
+            <th>Nilai</th>
+        </tr>
+        <?php for ($i = 0; $i < 3; $i++) { ?>
+            <tr>
+                <td><?php echo $nama[$i]; ?></td>
+                <td><?php echo $nilailp[$i] * 40 + $nilaihb[$i] * 20 + $nilaihp[$i] * 40; ?></td>
             </tr>
         <?php } ?>
     </table>
