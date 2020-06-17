@@ -56,9 +56,26 @@ include 'header.php';
         <?php for ($i = 0; $i < 3; $i++) { ?>
             <tr>
                 <td><?php echo $nama[$i]; ?></td>
-                <td><?php echo $nilailp[$i] * 40 + $nilaihb[$i] * 20 + $nilaihp[$i] * 40; ?></td>
+                <td><?php echo $alldata[] = $nilailp[$i] * 40 + $nilaihb[$i] * 20 + $nilaihp[$i] * 40; ?></td>
             </tr>
         <?php } ?>
+    </table>
+    <?php
+    $array = array("a" => 1, "b" => 2, "c" => 4, "d" => 5);
+    $maxValue = max($array);
+    $maxIndex = array_search(max($array), $array);
+    var_dump($maxValue, $maxIndex);
+    ?>
+    <h1>Peringkat Terbaik</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Data Alternatif</th>
+            <th>Nilai</th>
+        </tr>
+        <tr>
+            <td><?php echo $nama[2]; ?></td>
+            <td><?php echo $hasilterbaik = max($alldata); ?></td>
+        </tr>
     </table>
 </div>
 
