@@ -67,8 +67,16 @@ include 'header.php';
             <th>Nilai</th>
         </tr>
         <tr>
-            <td><?php echo $nama[2]; ?></td>
-            <td><?php echo $hasilterbaik = max($alldata); ?></td>
+            <?php
+            for ($i = 0; $i < count($nama); $i++) {
+                if ($alldata[$i] == max($alldata)) {
+                    $namamax = $nama[$i];
+                    $nilaimax = $alldata[$i];
+                }
+            }
+            ?>
+            <td><?php echo $namamax; ?></td>
+            <td><?php echo $nilaimax; ?></td>
         </tr>
     </table>
 </div>
